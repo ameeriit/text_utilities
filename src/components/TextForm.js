@@ -50,7 +50,7 @@ export default function TextForm(props) {
             id="myBox"
             rows="10"
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              backgroundColor: props.mode === "dark" ? "#2290b4" : "white",
               color: props.mode === "dark" ? "white" : "black",
             }}
           ></textarea>
@@ -81,7 +81,7 @@ export default function TextForm(props) {
           {" "}
           {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
         </p>
-        <p>{0.008 * text.split("").length} Minutes to read</p>
+        <p>{0.008 * text.split("").filter((element)=>{return element.length!==0}).length} Minutes to read</p>
         <h1>Preview</h1>
         <p>{text.length>0?text:"Enter to see preview"}</p>
       </div>
